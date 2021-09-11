@@ -1,0 +1,7 @@
+{
+  "name": "Origami-Bot",
+  "description": "WhatsApp Bot Simple",
+  "repository": "https://github.com/Chifuy/OrigamiBot",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot"]
+}
