@@ -1,1 +1,1 @@
-web: simpul. --server
+web: node . --server
