@@ -1,6 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
+let image = 'https://telegra.ph/file/f994fd8a9b8eb38543b68.jpg'
 let levelling = require('../lib/levelling')
 let tags = {
   'main': 'Main',
@@ -170,7 +171,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     // conn.reply(m.chat, text.trim(), m)
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + 'MENU')).buffer(), text.trim(), '#mnetapologize\n#mnetanjing\n\n_*MADE WITH ❤️ BY ARON*_\n© Origami-Bot', 'ANONYMOUS', '.anonychat', '🛒SHOP BOT', '!shop', m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(image)).buffer(), text.trim(), '#mnetapologize\n#mnetanjing\n\n_*MADE WITH ❤️ BY ARON*_\n© Origami-Bot', 'ANONYMOUS', '.anonychat', '🛒SHOP BOT', '!shop', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, Menu Sedang Error..', m)
     throw e
