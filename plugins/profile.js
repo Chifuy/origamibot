@@ -1,5 +1,6 @@
 let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
+let fetch = require('node-fetch')
 let handler = async (m, { conn, usedPrefix }) => {
   let pp = './src/avatar_contact.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -30,7 +31,7 @@ Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}
 Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
 `.trim()
     let mentionedJid = [who]
-    conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    await conn.sendButtonImg(m.chat, await (await fetch(pp)).buffer(), str, '© Origami-Bot', 'LEADERBOARD', '!lb', m, { contextInfo: { mentionedJid }})
   }
 }
 handler.help = ['profile [@user]']
