@@ -1,7 +1,7 @@
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
-let image = 'https://telegra.ph/file/f994fd8a9b8eb38543b68.jpg'
+let image = 'https://telegra.ph/file/dc34f8844151cb95c3e5f.jpg'
 let levelling = require('../lib/levelling')
 let tags = {
   'main': 'Main',
