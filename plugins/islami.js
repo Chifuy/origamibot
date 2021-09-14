@@ -3,7 +3,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     let res = await fetch(API('hardianto', '/api/random/quotes/muslim', {}, 'apikey'))
     if (!res.ok) throw eror
     let json = await res.json()
-    await conn.sendButton(m.chat, json.result.text_id, watermark, 'Quotes Islami', '!qislam', m)
+    await conn.sendButton(m.chat, json.result.text_id, '© Origami-Bot', 'QUOTES ISLAMI', '!qislam', m)
 }
 handler.help = ['qislam']
 handler.tags = ['quotes']
