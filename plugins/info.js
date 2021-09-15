@@ -1,5 +1,5 @@
 let fetch = require('node-fetch')
-let image = 'https://telegra.ph/file/b277fb63f78d5a51fbbf6.jpg'
+let image = 'https://telegra.ph/file/b48c67fbc25daf2694403.jpg'
 let handler = async (m, { conn }) => conn.send3ButtonLoc(m.chat, await (await fetch(image)).buffer(), `╭───「 INFO • BOT 」
 │ • Group: https://rotf.lol/OBOffic
 │ • TikTok: https://rotf.lol/origamitt
