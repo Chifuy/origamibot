@@ -24,6 +24,6 @@ let handler = async (m, { conn, usedPrefix }) => {
 }
 handler.help = ['wait (caption|reply image)']
 handler.tags = ['internet']
-handler.command = /^(wait)$/i
+handler.command = /^wait$/i
 
 module.exports = handler

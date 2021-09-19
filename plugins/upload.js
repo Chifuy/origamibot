@@ -13,7 +13,8 @@ ${media.length} Byte(s)
 ${isTele ? '(No Expiry Date)' : '(Unknown)'}`)
 }
 handler.help = ['upload (caption|reply media)']
-handler.tags = ['tools']
+handler.tags = ['owner']
 handler.command = /^upload$/i
+handler.owner = true
 
 module.exports = handler
