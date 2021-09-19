@@ -2,7 +2,6 @@ const uploadImage = require('../lib/uploadImage')
 const fetch = require('node-fetch')
 const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
-
 let handler = async (m, { conn, text }) => {
  try {
      let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text

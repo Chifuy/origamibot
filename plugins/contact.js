@@ -9,7 +9,6 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['save'].map(v => v + ' @mention <ContactName>')
 handler.tags = ['']
-
 handler.command = /^save$/
 
 module.exports = handler

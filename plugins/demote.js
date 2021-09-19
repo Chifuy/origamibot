@@ -5,11 +5,8 @@ let handler = async (m, { conn, participants }) => {
 }
 handler.help = ['demote','member'].map(v => v + ' @user')
 handler.tags = ['admin']
-
 handler.command = /^(demote|member)$/i
-
 handler.group = true
-
 handler.admin = true
 handler.botAdmin = true
 

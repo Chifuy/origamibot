@@ -20,10 +20,10 @@ Ketik ${usedPrefix}ao untuk bantuan
 Bonus: ${poin} XP
     `.trim()
     conn.asahotak[id] = [
-        await conn.send2Button(m.chat, caption.trim(), '© Origami-Bot', 'BANTUAN', '.ao', 'NYERAH', 'nyerah'),
+        await conn.send2Button(m.chat, caption.trim(), '© Origami-Bot', 'BANTUAN', '.ao', 'NYERAH', 'nyerah', m),
         json, poin,
         setTimeout(async () => {
-            if (conn.asahotak[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '', 'ASAH OTAK', '.asahotak', { quoted: m })
+            if (conn.asahotak[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '', 'ASAH OTAK', '.asahotak', m)
             // conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.asahotak[id][0])
             delete conn.asahotak[id]
         }, timeout)

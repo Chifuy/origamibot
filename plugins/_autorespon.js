@@ -1,4 +1,6 @@
 let fs = require('fs')
+let fetch = require('node-fetch')
+let image = 'https://telegra.ph/file/339da3177e0ea96c34eea.jpg'
 let handler = m => m
 
 handler.all = async function (m, { isBlocked }) {
@@ -13,7 +15,7 @@ handler.all = async function (m, { isBlocked }) {
     // ketika ditag
     try {
         if (m.mentionedJid.includes(this.user.jid) && m.isGroup) {
-            await this.send2Button(m.chat, `Ehm.. iya ada apa kak?${m.msg.contextInfo.expiration == 604800 ? '\n\nMatiin Pesan Sementaranya, Biar Tombolnya Bisa Dipake' : ''}`.trim(), 'Btw kakak kok cakep sih >///<', 'MENU', '!menu', 'INFO GROUP', '!groupinfo', m)
+            await this.send2Button(m.chat, `Ehm.. iya ada apa kak?${m.msg.contextInfo.expiration == 604800 ? '\n\nMatiin Pesan Sementaranya, Biar Tombolnya Bisa Dipake' : ''}`.trim(), '© Origami-Bot', '⋮☰ MENU', '!menu', '☰ INFO GROUP', '!groupinfo', m)
         }
     } catch (e) {
         return
@@ -38,6 +40,17 @@ handler.all = async function (m, { isBlocked }) {
     if (isSalam && !m.fromMe) {
         m.reply(`وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n_wa\'alaikumussalam wr.wb._`)
     }
+
+    let ucap = /(ha(i|y|lo)|hi|bot)/i
+    let isUcapan = ucap.exec(m.text)
+    if (isUcapan && !m.fromMe) {
+       await this.send2ButtonLoc(m.chat, await (await fetch(image)).buffer(), `
+*Hay kak, ${conn.getName(m.sender)}👋🏻*
+
+Perkenalkan aku adalah *${this.user.name}*, Bot whatsapp Indonesia
+Apa ada yang bisa aku bantu?`, `*WhatsApp Bot By @${global.owner[0]}*`, '⋮☰ MENU', '!menu', '⎙ INFO', '!info', m, { contextInfo: { mentionedJid: [global.owner[0] + '@s.whatsapp.net'] } })
+    }
+
 
     // backup db
     if (setting.backup) {

@@ -1,4 +1,4 @@
-let handler = async (m, { conn, isPrems, text }) => {
+let handler = async (m, { conn, isPrems, usedPrefix, text }) => {
     let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
     if (!teks) throw 'Uang Liburan Habis'
     let countrt = ['Inggris🇬🇧','Arab Saudi🇸🇦','Uni Emirate Arab🇦🇪','Sri Lanka🇱🇰','Finlandia🇫🇮','India🇮🇳','Australia🇦🇺','China🇨🇳','Jepang🇯🇵','Korea Utara🇰🇵','Kenya🇰🇪','Timor Leste🇹🇱','Malaysia🇲🇾','Amerika Serikat🇺🇸','Kanada🇨🇦','Brazil🇧🇷','Swedia','Uzbekistan','Qatar','Thailand','Islandia','New Zealand','Papua Nugini','Mexsico','Texas','Singapore']
@@ -17,7 +17,7 @@ await conn.sendButton(m.chat, `
 Hadiah Kamu!
 *️⃣Exp: *+${isPrems ? yoih : yoi}*
 🍑Fruit: *+${bekal}*
-`.trim(), ' © Origami-Bot', 'NEXT', '!adventure', m)
+`.trim(), ' © Origami-Bot', 'ADVENTURE', `${usedPrefix}adventure`, m)
 }
 
 handler.help = ['adventure']
