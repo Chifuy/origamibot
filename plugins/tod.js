@@ -1,22 +1,21 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
   if (/^tod$/i.test(command)) {
-    conn.send3Button(m.chat, 'Truth or Dare', '© Origami-Bot', 'TRUTH', '!truth', 'DARE', '!dare', 'RANDOM', `${pickRandom(['!dare', '!truth'])}`)
+    await conn.send3Button(m.chat, 'Truth or Dare', '© Origami-Bot', 'TRUTH', '!truth', 'DARE', '!dare', 'RANDOM', `${pickRandom(['!dare', '!truth'])}`,m)
+
   }
   if (/^truth$/i.test(command)) {
-    let res = await fetch(global.API('pencarikode', '/api/truthid', {}, 'apikey'))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
+    let res = await fetch(API('pencarikode', '/api/truthid', {}, 'apikey'))
+    if (!res.ok) throw eror
     let json = await res.json()
-    if (json.message == "") throw json
-    conn.send2Button(m.chat, json.message, '', 'TRUTH', '!truth', 'DARE', '!dare')
+    await conn.send2Button(m.chat, json.message, '© Origami-Bot', 'TRUTH', '!truth', 'DARE', '!dare', m)
 
   }
   if (/^dare$/i.test(command)) {
-    let res = await fetch(global.API('pencarikode', '/api/dareid', {}, 'apikey'))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
+    let res = await fetch(API('pencarikode', '/api/dareid', {}, 'apikey'))
+    if (!res.ok) throw eror
     let json = await res.json()
-    if (json.message == "") throw json
-    conn.send2Button(m.chat, json.message, '', 'TRUTH', '!truth', 'DARE', '!dare')
+    await conn.send2Button(m.chat, json.message, '© Origami-Bot', 'TRUTH', '!truth', 'DARE', '!dare', m)
 
   }
 }

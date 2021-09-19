@@ -5,11 +5,11 @@ let handler = async function (m, { text, usedPrefix }) {
   if (user.registered === true) throw `Anda Sudah Registrasi\nMau Registrasi Ulang? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
   if (!Reg.test(text)) throw `Format Salah\n*${usedPrefix}reg nama.umur*`
   let [_, name, splitter, age] = text.match(Reg)
-  if (!name) throw 'Nama Tidak Boleh Kosong (Alphanumeric)'
-  if (!age) throw 'Umur Tidak Boleh Kosong (Angka)'
+  if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
+  if (!age) throw 'Umur tidak boleh kosong (Angka)'
   age = parseInt(age)
-  if (age > 50) throw 'Umur nya Terlalu Tua Kak :v'
-  if (age < 8) throw 'Masih Kecil Engga Boleh Pake Yah!'
+  if (age > 50) throw 'Umur nya terlalu tua :v'
+  if (age < 8) throw 'Masih kecil engga boleh pake Bot yah.. dek'
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date

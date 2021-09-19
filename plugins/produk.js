@@ -13,10 +13,10 @@ ${json.desc}
 *Penjual:*
 wa.me/${json.jual}
 `.trim()
-    await conn.send2ButtonImg(m.chat, await(await fetch(json.img)).buffer(), caption, 'Mau produknya dipajang juga? Klik tombol NEXT', 'NEXT➡ ️', '!produk', 'JUAL📥', '${usedPrefix}jual', m)
+    await conn.send2ButtonImg(m.chat, await(await fetch(json.img)).buffer(), caption, 'Mau produknya dipajang juga? Klik tombol NEXT', 'NEXT➡ ️', '!produk', 'JUAL📥', '!jual', m)
 }
 handler.help = ['produk']
 handler.tags = ['toko']
 handler.command = /^produk$/i
-
+// Punya Si Fadli Bandar Bokep
 module.exports = handler

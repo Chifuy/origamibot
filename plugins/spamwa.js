@@ -7,7 +7,7 @@ if (jumlah && isNaN(jumlah)) throw 'Jumlah harus berupa angka!'
 
   let fixedNumber = nomor.replace(/[-+<>@]/g, '').replace(/ +/g, '').replace(/^[0]/g, '62') + '@s.whatsapp.net'
   let fixedJumlah = jumlah ? jumlah * 1 : 10
-  if (fixedJumlah > 100) throw 'Jumlah terlalu banyak!'
+  if (fixedJumlah > 101) throw 'Jumlah terlalu banyak!'
   await m.reply(`[!] Berhasil mengirimkan spam whatsapp ke ${nomor} sebanyak ${fixedJumlah} kali!`)
   for (let i = fixedJumlah; i > 1; i--) {
   if (i !== 0) conn.reply(fixedNumber, pesan.trim(), m)
