@@ -12,9 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }[(args[0] || '')]
     if (isClose === undefined) {
 	await conn.send2Button(m.chat, `
-contoh:
-${usedPrefix + command} close
-${usedPrefix + command} open
+Hayo.. mau ngapain?
     `.trim(), '© Origami-Bot', 'OPEN', '!group 1', 'CLOSE', '!group 0', m)
 	throw false
     }

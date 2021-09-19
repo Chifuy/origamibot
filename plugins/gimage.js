@@ -17,7 +17,7 @@ ${text}
 `.trim(), m)
 }
 handler.help = ['gimage <query>', 'image <query>', 'images <query>']
-handler.tags = ['internet', 'tools']
+handler.tags = ['internet']
 handler.command = /^(gimage|image|images)$/i
 
 module.exports = handler

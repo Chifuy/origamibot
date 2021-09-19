@@ -1,5 +1,5 @@
 let fetch = require('node-fetch')
-     let handler  = async (m, { conn, args }) => {
+let handler  = async (m, { conn, args }) => {
     heum = await fetch(`https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=BandarBokep`)
     json = await heum.buffer()
    conn.sendFile(m.chat, json, 'nulis', 'Huu.. pedo', m, false, { thumbnail: Buffer.alloc(0) })

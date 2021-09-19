@@ -7,7 +7,7 @@ function handler(m, { groupMetadata }) {
     let b
     do b = ps[Fl(R() * ps.length)]
     while (b === a)
-    m.reply(`*${toM(a)} ❤️ ${toM(b)}*\nEhm...\nSmoga Langgeng Yah, Btw PJ nya Mana? :v`, null, {
+    m.reply(`Ekhm...\n*${toM(a)} ❤️ ${toM(b)}*\nSmoga Langgeng Yah, Btw PJ nya Mana? :v`, null, {
         contextInfo: {
             mentionedJid: [a, b]
         }

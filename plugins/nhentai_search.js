@@ -6,6 +6,7 @@ let handler = async(m, { conn, text }) => {
     let keqing = json.result.map((v, i) => `#${i + 1}. \n*Kode:* ${v.id}\n*Title English:* ${v.title_english}\n*Title Japanese:* ${v.title_japanese}\n*Title:* ${v.title_native}\n*Date:* ${v.date_upload}\n*Page:* ${v.page}\n*Favourite:* ${v.favourite}\n==============\n`).join('\n') 
     if (json.status) m.reply(keqing)
     else throw json
+    conn.fakeReply(m.chat, 'Searching...', '0@s.whatsapp.net', 'Bissmillah Dapet Yang Hot', 'status@broadcast')
 }
 handler.help = ['nhens <query>','nhensearch <query>']
 handler.tags = ['weeaboo']

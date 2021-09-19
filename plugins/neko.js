@@ -10,7 +10,7 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['neko']
 handler.tags = ['weeaboo']
-handler.limit = 3
+handler.limit = true
 handler.command = /^neko$/i
 
 module.exports = handler

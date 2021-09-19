@@ -19,7 +19,7 @@ Berhasil Level Up!
 *${before}* => *${user.level}*
 
 Ketik ${usedPrefix}profile untuk mengeceknya
-Ketik ${usedPrefix}rankcard untuk cek card nya
+Ketik ${usedPrefix}rankcard untuk cek rank card 
 `.trim(), '© Origami-Bot', 'PROFIlE', '!profile', 'RANK CARD', '!rank', m)
         }
 }

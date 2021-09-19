@@ -19,5 +19,5 @@ handler.tags = ['toko']
 handler.help = ['jual <judul>|<nomor>|<desc>']
 handler.command = /^jual$/i
 handler.limit = true
-
+// Punya Si Fadli Bandar Bokep
 module.exports = handler
