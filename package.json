@@ -19,16 +19,16 @@
     "whatsapp",
     "js-whatsapp"
   ],
-  "homepage": "https://github.com/Chifuy/OrigamiBot",
+  "homepage": "https://github.com/Chifuy/origamibot",
   "author": {
     "name": "Aron"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chifuy/OrigamiBot.git"
+    "url": "git+https://github.com/Chifuy/origamibot.git"
   },
   "bugs": {
-    "url": "https://github.com/Chifuy/OrigamiBot/issues"
+    "url": "https://github.com/Chifuy/origamibot/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
