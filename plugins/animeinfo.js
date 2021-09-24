@@ -16,7 +16,7 @@ let handler = async(m, { conn, text }) => {
 👥 *Members:* ${members}
 💚️ *Synopsis:* ${synopsis}
 🌐️ *URL*: ${url}`
-  conn.sendButtonImg(m.chat, await (await fetch(image_url)).buffer(), caption, '© Origami-Bot', 'MANGA', `!manga ${title}`, m)
+  conn.sendButtonImg(m.chat, await (await fetch(image_url)).buffer(), caption, '© Origami-Bot', `Manga ${text}`, `!manga ${title}`, m)
 }
 handler.help = ['anime <judul>']
 handler.tags = ['weeaboo']
