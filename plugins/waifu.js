@@ -1,11 +1,11 @@
 let fetch = require('node-fetch')
-let handler = async(m, { conn }) => {
+let handler = async(m, { conn, usedPrefix }) => {
   m.reply('Searching...')
   let res = await fetch('https://api.waifu.pics/sfw/waifu')
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.url) throw 'Error!'
-  conn.sendFile(m.chat, json.url, '', 'Istri Kok 2D :v', m)
+  await conn.sendButtonImg(m.chat, await (await fetch(json.url)).buffer(), 'Istri Kok 2D :v', '', '🔍 Search WAIFU', `${usedPrefix}waifu, m)
 }
 handler.help = ['waifu']
 handler.tags = ['weeaboo']
