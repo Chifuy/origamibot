@@ -15,7 +15,7 @@ let handler = async function (m, { text, usedPrefix }) {
   user.regTime = + new Date
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
-  m.reply(`
+  await this.send2Button(`
 Register Berhasil!
 
 ╭─「 INFO 」
@@ -23,7 +23,7 @@ Register Berhasil!
 │ Umur: ${age} Tahun
 │ SN: ${sn}
 ╰────
-`.trim())
+`.trim(), '© Origami-Bot', '🗣️ PROFILE', `${usedPrefix}profile`, '⋮☰ MENU', `${usedPrefix}menu`, m)
 }
 handler.help = ['reg', 'register'].map(v => v + ' <nama>.<umur>')
 handler.tags = ['Exp']
