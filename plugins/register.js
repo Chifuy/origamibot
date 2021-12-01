@@ -1,4 +1,5 @@
-const { createHash } = require('crypto')
+let fetch = require('node-fetch')
+nst { createHash } = require('crypto')
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { text, usedPrefix }) {
   let user = global.db.data.users[m.sender]
@@ -15,13 +16,15 @@ let handler = async function (m, { text, usedPrefix }) {
   user.regTime = + new Date
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
-  await this.send2Button(`
+  let pp = await this.getProfilePicture(user)
+  await this.send2ButtonLoc(m.chat, await (await fetch(pp)).buffer(), `
 Register Berhasil!
 
 ╭─「 INFO 」
 │ Nama: ${name}
 │ Umur: ${age} Tahun
-│ SN: ${sn}
+│ SN: 
+│ ${sn}
 ╰────
 `.trim(), '© Origami-Bot', '🗣️ PROFILE', `${usedPrefix}profile`, '⋮☰ MENU', `${usedPrefix}menu`, m)
 }
