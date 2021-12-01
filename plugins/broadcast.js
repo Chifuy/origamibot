@@ -1,3 +1,4 @@
+let fetch = require('node-fetch')
 let handler = async (m, { conn, text }) => {
   let chats = conn.chats.all().filter(v => !v.read_only && v.message && !v.archive).map(v => v.jid)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
@@ -5,7 +6,8 @@ let handler = async (m, { conn, text }) => {
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_\nestimasi selesai ${chats.length * 1.5} detik`, m)
   for (let id of chats) {
     await delay(1500)
-    await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : '〔 Origami-Bot Broadcast 〕\n\n' + teks + '\n' + readMore + randomID(32)), true).catch(_ => _)
+
+    await conn.send2ButtonLoc(id, await (await fetch(fla + 'BROADCAST')).buffer(), `*${this.user.name} Broadcast*`, teks + `\n\n© ${this.user.name}`, '⋮☰ MENU', `${usedPrefix}menu`, `🏷️ DONASI`, '!donasi', null).catch(_ => _)
   }
   m.reply('_*Broadcast Selesai*_')
 }
