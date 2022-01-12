@@ -37,7 +37,10 @@ global.APIKeys = { // APIKey Here
 global.packname = 'Origami-Bot'
 global.author = 'Aron'
 
+global.wait = ' 「⏱」 Tunggu kak...'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
+global.wm = '© Origami-Bot'
+global.thumb = 'https://telegra.ph/file/f5456d71b6bb0aac7ed0b.jpg'
 
 global.multiplier = 70 // The higher, The harder levelup
 
