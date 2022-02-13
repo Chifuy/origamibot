@@ -1,2 +1,2 @@
-# OrigamiBot
+# Origami-Bot
 Created By Aron
